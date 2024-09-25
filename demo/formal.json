@@ -1,0 +1,18 @@
+{
+    "input": {
+        "baseDir": "formal"
+    },
+    "output": {
+        "footerStartPage": 2,
+        "footerEndPage": -1,
+        "file": "dist/formal.pdf",
+        "info": {
+            "author": "F. Ictional",
+            "title": "Test Document",
+            "subject": "PDF Generator"
+        }
+    },
+    "define": {
+        "customer": "Foo Corporation"
+    }
+}
