@@ -1,6 +1,6 @@
 {
     "name": "makebook",
-    "version": "1.0.4",
+    "version": "1.0.6",
     "description": "📖 MakeBook - Convert Markdown into beautifully formatted PDFs.",
     "main": "index.js",
     "repository": {
@@ -10,7 +10,18 @@
     "keywords": [
         "markdown",
         "pdf",
-        "makepdf"
+        "makepdf",
+        "book",
+        "documentation",
+        "writing",
+        "latex",
+        "font",
+        "toc",
+        "table",
+        "column",
+        "transclusion",
+        "format",
+        "manual"
     ],
     "author": "Martin Clasen",
     "license": "MIT",
