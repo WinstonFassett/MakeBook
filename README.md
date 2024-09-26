@@ -169,11 +169,12 @@ For more you can refer to the `/demo` directory in the project repository. These
 
 1. **Manual**: 
    - File: `/demo/demo_manual.js`
-   - It loads the configuration from `/demo/manual` directory.
+   - It loads the configuration from the [`/demo/manual`](https://github.com/clasen/MakeBook/tree/master/demo/manual) directory.
+   - It generates a PDF named [`manual.pdf`](https://github.com/jcormont/makepdf/blob/HEAD/manual.pdf).
 
 2. **Formal**: 
    - File: `/demo/demo_formal.js`
-   - It loads the configuration from `/demo/formal` directory.
+   - It loads the configuration from the [`/demo/formal`](https://github.com/clasen/MakeBook/tree/master/demo/formal) directory.
 
 ## ✏️ Writing Your Content
 
