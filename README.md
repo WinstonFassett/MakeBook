@@ -29,7 +29,7 @@ Here's how you can create a PDF book by specifying only the `input.baseDir` in t
 
 ```javascript
 const fs = require('fs');
-const MakeBook = require('./makebook');
+const MakeBook = require('makebook');
 
 const config = {
     input: {
@@ -67,7 +67,7 @@ book.save('my-awesome-book.pdf')
 - **styles**: Styles for different document elements.
 - **define**: Additional definitions for dynamic content insertion.
 
-### Sample Configuration with Styles and Fonts
+### 📝 Example 1: Creating a Simple PDF from directory
 
 ```javascript
 const config = {
@@ -107,6 +107,74 @@ const config = {
 };
 ```
 
+### 🎨 Example 2: Using Custom Fonts and Styles
+
+```javascript
+const MakeBook = require('makebook');
+
+const config = {
+    output: {
+        info: {
+            author: "Jane Smith",
+            title: "Custom Example",
+            subject: "Some countries"
+        }
+    },
+    styles: {
+        default: {
+            fontSize: 10,
+            lineHeight: 1.5
+        },
+        h1: {
+            fontSize: 22,
+            bold: true,
+            color: "#4CAF50"
+        }
+    }
+};
+
+const book = new MakeBook(config);
+
+book.content(`
+# 🖌️ Custom Example
+
+## Here's a list of some countries from around the world:
+
+- 🇦🇷 Argentina
+- 🇯🇵 Japan
+- 🇧🇷 Brazil
+- 🇦🇺 Australia
+- 🇩🇪 Germany
+`);
+
+const fontInconsolata = {
+    normal: '**/Inconsolata-Regular.ttf',
+    bold: '**/Inconsolata-Bold.ttf',
+    italics: '**/Inconsolata-Italic.ttf'
+};
+
+book.font(fontInconsolata)
+    .save('custom-styles.pdf')
+    .then(() => {
+        console.log('📄 PDF saved successfully!');
+    })
+    .catch(err => {
+        console.error('❌ Error saving PDF:', err);
+    });
+```
+
+## 🧪 Check Examples
+
+For more you can refer to the `/demo` directory in the project repository. These demonstrations provide structured illustrations of various features and configurations:
+
+1. **Manual**: 
+   - File: `/demo/demo_manual.js`
+   - It loads the configuration from `/demo/manual` directory.
+
+2. **Formal**: 
+   - File: `/demo/demo_formal.js`
+   - It loads the configuration from `/demo/formal` directory.
+
 ## ✏️ Writing Your Content
 
 Create your content in Markdown format. MakeBook supports standard Markdown syntax and extends it with additional features:
@@ -137,15 +205,15 @@ Create tables using pipe `|` characters:
 
 ### Automatic Numbering and TOC
 
-- Use `\()` to insert automatic numbering for sections.
-- Insert a table of contents using the `\toc` tag on a separate line.
+- Use `\\()` to insert automatic numbering for sections.
+- Insert a table of contents using the `\\toc` tag on a separate line.
 
 ### Transclusion
 
 Include content from other files or images:
 
-- **Images**: `\image(path/to/image.png)`
-- **Include Files**: `\include(path/to/other.md)`
+- **Images**: `\\image(plant.png)`
+- **Include Files**: `\\include(other.md)`
 
 ## 🎨 Customization
 
@@ -189,10 +257,18 @@ const config = {
 
 MakeBook utilizes the fantastic [`makepdf`](https://www.npmjs.com/package/makepdf) library to convert Markdown to PDF. Special thanks to its contributors for making PDF generation in Node.js a breeze!
 
-## 📄 License
-
-This project is under the MIT License. See the `LICENSE` file for more details.
-
 ## 📬 Contact
 
-For questions or suggestions, please open an issue in the repository or contact the project maintainer.
+For questions or suggestions, please open an issue in the [GitHub repository](https://github.com/clasen/MakeBook) or contact the project maintainer.
+
+## 📄 License
+The MIT License (MIT)
+
+Copyright (c) Martin Clasen
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
