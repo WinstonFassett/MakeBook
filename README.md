@@ -1,4 +1,9 @@
+
 # 📖 MakeBook
+
+This is a fork of [GitHub repository](https://github.com/clasen/MakeBook) for experimenting with LLM ebook generation. 
+
+---
 
 MakeBook is a Node.js class that allows you to generate PDF documents from Markdown content effortlessly. It leverages the power of the `makepdf` library to convert Markdown into beautifully formatted PDFs. ✨
 

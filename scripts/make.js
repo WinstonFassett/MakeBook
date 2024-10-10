@@ -14,13 +14,25 @@ async function makeBooks(books = defaultBooks) {
       continue;
     }
 
-    const indexPath = path.join(bookPath, 'index.js');
-    if (!fs.existsSync(indexPath)) {
-      console.error(`Index file not found: ${indexPath}`);
-      continue;
+    // Load book configuration from book.json
+    const bookConfigPath = path.join(bookPath, 'book.json');
+    let bookConfig;
+    
+    if (fs.existsSync(bookConfigPath)) {
+      bookConfig = require(bookConfigPath);
+      
+      // Adjust paths to be relative to the book's directory
+      bookConfig.input.entry = path.join(bookPath, bookConfig.input.entry);
+      bookConfig.output.fileName = path.join(bookPath, bookConfig.output.fileName);
+    } else {
+      const indexPath = path.join(bookPath, 'index.js');
+      if (!fs.existsSync(indexPath)) {
+        console.error(`Index file not found: ${indexPath}`);
+        continue;
+      }
+      bookConfig = require(indexPath);
     }
 
-    const bookConfig = require(indexPath);
     const makeBook = new MakeBook(bookConfig);
     
     try {

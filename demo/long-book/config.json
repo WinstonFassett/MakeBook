@@ -1,0 +1,47 @@
+{
+    "input": {
+        "baseDir": ".",
+        "entry": "index.md"
+    },
+    "output": {
+        "file": "long-book.pdf",
+        "info": {
+            "author": "Author Name",
+            "title": "Long Book",
+            "subject": "A proof of concept for a long book"
+        }
+    },
+    "fonts": {
+        "Symbol": {
+            "normal": "include/NotoEmoji-Regular.ttf"
+        }
+    },
+    "define": {
+        "draft": true
+    },
+    "styles": {
+        "toc": {
+            "fontSize": 10
+        },
+        "doclink": {
+            "bold": true,
+            "color": "#0066cc"
+        },
+        "link": {
+            "color": "#0066cc",
+            "decoration": "underline"
+        },
+        "h1": {
+            "color": "#0066cc"
+        },
+        "h2": {
+            "color": "#0066cc"
+        },
+        "h3": {
+            "color": "#0066cc"
+        },
+        "h4": {
+            "color": "#0066cc"
+        }
+    }
+}

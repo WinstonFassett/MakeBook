@@ -4,7 +4,7 @@
     "description": "📖 MakeBook - Convert Markdown into beautifully formatted PDFs.",
     "main": "index.js",
     "scripts": {
-        "make": "node ./make.js"
+        "make": "node ./scripts/make.js"
     },
     "repository": {
         "type": "git",

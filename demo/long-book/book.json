@@ -1,0 +1,13 @@
+{
+    "input": {
+        "entry": "index.md"
+    },
+    "output": {
+        "fileName": "long-book.pdf",
+        "info": {
+            "title": "Long Book",
+            "author": "Author Name",
+            "subject": "Description of the long book"
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "input": {
+        "entry": "content.md"
+    },
+    "output": {
+        "fileName": "hello-world.pdf",
+        "info": {
+            "title": "Hello World",
+            "author": "Claude",
+            "subject": "A simple example book"
+        }
+    }
+}
