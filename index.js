@@ -1,10 +1,10 @@
 const fs = require("fs");
 const path = require("path");
 const os = require("os");
-const { getConfig, findFontFiles, pageBreakBefore, getTableLayouts } = require("../makepdf/dist/config");
-const { getFooterFn } = require("../makepdf/dist/content/footer");
-const { OutputContext } = require("../makepdf/dist/parser/context");
-const { parseMarkdownFile } = require("../makepdf/dist/parser/parse");
+const { getConfig, findFontFiles, pageBreakBefore, getTableLayouts } = require("makepdf/dist/config");
+const { getFooterFn } = require("makepdf/dist/content/footer");
+const { OutputContext } = require("makepdf/dist/parser/context");
+const { parseMarkdownFile } = require("makepdf/dist/parser/parse");
 const PdfPrinter = require("pdfmake");
 
 class MakeBook {
