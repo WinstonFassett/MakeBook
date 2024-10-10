@@ -3,6 +3,9 @@
     "version": "1.0.6",
     "description": "📖 MakeBook - Convert Markdown into beautifully formatted PDFs.",
     "main": "index.js",
+    "scripts": {
+        "make": "node ./make.js"
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/clasen/MakeBook.git"
