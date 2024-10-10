@@ -1,0 +1,13 @@
+{
+    "input": {
+        "entry": "index.md"
+    },
+    "output": {
+        "fileName": "llm-guidance.pdf",
+        "info": {
+            "title": "LLM Guidance",
+            "author": "Author Name",
+            "subject": "Description of the long book"
+        }
+    }
+}

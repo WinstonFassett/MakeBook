@@ -19,12 +19,14 @@ async function makeBooks(books = defaultBooks) {
     let bookConfig;
     
     if (fs.existsSync(bookConfigPath)) {
+      
       bookConfig = require(bookConfigPath);
       
       // Adjust paths to be relative to the book's directory
       bookConfig.input.entry = path.join(bookPath, bookConfig.input.entry);
       bookConfig.output.fileName = path.join(bookPath, bookConfig.output.fileName);
     } else {
+      console.log(`MISSING: ${bookConfigPath}`)
       const indexPath = path.join(bookPath, 'index.js');
       if (!fs.existsSync(indexPath)) {
         console.error(`Index file not found: ${indexPath}`);
